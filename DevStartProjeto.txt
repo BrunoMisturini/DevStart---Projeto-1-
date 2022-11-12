@@ -1,0 +1,46 @@
+let atletas = [
+ {
+   nome: "Cesar Abascal",
+   notas: [9.34, 8.42, 10,7.88,10]
+ },
+ {
+   nome: "Fernando Puntel",
+   notas:  [8, 10, 10, 7, 9.33]
+ },
+ {
+   nome: "Daiane Jelinsky",
+   notas: [7, 10, 9.5, 9.5, 8]
+ },
+ {
+   nome: "Bruno Castro",
+   notas: [10, 10, 10, 9, 9.5]
+ }
+];
+
+function funcao(atleta) {
+    let soma = 0 
+    let media = 0
+    let nome = atleta.nome
+    let notas = atleta.notas
+    notas.sort(function(a,b){
+        if(a > b) return 1
+        if(a < b) return -1
+        return 0
+    })
+    notas.pop()
+    notas.shift()
+    notas = notas
+    atleta.notas.forEach(function(nota){
+    soma = soma + nota
+    media = soma/notas.length
+    })
+    console.log(
+`Nome: ${nome}
+Notas: ${notas}
+Media: ${media}`
+)
+    }
+
+funcao(atletas[0])
+
+
